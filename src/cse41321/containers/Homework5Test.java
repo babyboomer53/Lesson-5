@@ -7,9 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 
 public class Homework5Test {
 
@@ -41,11 +39,14 @@ public class Homework5Test {
 
     @Test
     public void theChainedHashTableConstructorTestBeforeModification() {
-        KeyValuePair<Integer, String> keyValuePair = new KeyValuePair<>(548962115, "Edgar Cole");
         ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(11);
         chainedHashTable.insert(548962115, "Edgar Cole");
         assertTrue(chainedHashTable.contains(548962115));
         chainedHashTable.insert(123456789, "Adrienne Davis");
-        assertEquals(chainedHashTable.lookup(123456789),"Adrienne Davis");
+        assertEquals(chainedHashTable.lookup(123456789), "Adrienne Davis");
+        assertEquals(chainedHashTable.getSize(), 2);
+        chainedHashTable.remove(548962115);
+        assertEquals(chainedHashTable.getSize(), 1);
+        assertEquals(chainedHashTable.lookup(123456789), "Adrienne Davis");
     }
 }
