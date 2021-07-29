@@ -237,6 +237,10 @@ public class Homework5 {
 
         private int size;
 
+        private double maxLoadFactor = 1.5;
+
+        private int resizeMultiplier = 2;
+
         public ChainedHashTable() {
             this(997);  // A prime number of buckets
         }
@@ -249,6 +253,12 @@ public class Homework5 {
                 table[i] = new SinglyLinkedList<KeyValuePair<K, V>>();
             }
             size = 0;
+        }
+
+        public ChainedHashTable(int buckets, double maxLoadFactor, int resizeMultiplier) {
+            this(buckets);
+            this.maxLoadFactor = maxLoadFactor;
+            this.resizeMultiplier = resizeMultiplier;
         }
 
         public int getSize() {

@@ -49,4 +49,12 @@ public class Homework5Test {
         assertEquals(chainedHashTable.getSize(), 1);
         assertEquals(chainedHashTable.lookup(123456789), "Adrienne Davis");
     }
+
+    @Test
+    public void andHereIsTheModifiedConstructorForTheChainedHashTable(){
+        ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(11,1.5,2);
+        assertTrue(chainedHashTable.isEmpty());
+        chainedHashTable.insert(548962115,"Edgar Cole");
+        assertFalse(chainedHashTable.isEmpty());
+    }
 }
