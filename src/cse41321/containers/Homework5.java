@@ -413,8 +413,6 @@ public class Homework5 {
                     K key = element.getData().getKey();
                     V value = element.getData().getValue();
                     table[Math.abs(key.hashCode()) % table.length].insertHead(new KeyValuePair<>(key, value));
-                    //table[(int) Math.floor(table.length * ((int) key * 0.67f % 1))].insertHead(new KeyValuePair<>
-                    // (key, value));
                     element = element.getNext();
                 }
             }
