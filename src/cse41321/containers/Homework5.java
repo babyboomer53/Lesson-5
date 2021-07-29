@@ -283,6 +283,9 @@ public class Homework5 {
                 throw new DuplicateKeyException();
             }
 
+            // Has the load factor exceeded the threshold?
+            if ((double) size / table.length >= 1.5) resizeTable();
+
             getBucket(key).insertHead(new KeyValuePair<K, V>(key, value));
             ++size;
         }
@@ -400,13 +403,19 @@ public class Homework5 {
             SinglyLinkedList<KeyValuePair<K, V>>[] newTable = new SinglyLinkedList[table.length * resizeMultiplier];
             SinglyLinkedList<KeyValuePair<K, V>>[] originalTable = table;
             for (int index = 0; index < newTable.length; index++) {
-                newTable[index] = new SinglyLinkedList<KeyValuePair<K, V>>();
+                newTable[index] = new SinglyLinkedList<>();
             }
-            table = newTable;
+            this.table = newTable;
+            SinglyLinkedList<KeyValuePair<K, V>>.Element element;
             for (int index = 0; index < originalTable.length; index++) {
-                SinglyLinkedList<KeyValuePair<K, V>>.Element element = originalTable[0].head;
+                element = originalTable[index].head;
                 while (element != null) {
-                    insert(element.getData().getKey(),element.getData().getValue());
+                    K key = element.getData().getKey();
+                    V value = element.getData().getValue();
+                    table[Math.abs(key.hashCode()) % table.length].insertHead(new KeyValuePair<>(key, value));
+                    //table[(int) Math.floor(table.length * ((int) key * 0.67f % 1))].insertHead(new KeyValuePair<>
+                    // (key, value));
+                    element = element.getNext();
                 }
             }
         }

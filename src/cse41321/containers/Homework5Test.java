@@ -60,15 +60,19 @@ public class Homework5Test {
 
     @Test
     public void theResizeMethod() {
-        ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(7, 1.5, 2);
+        ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(7, 1.5, 3);
         assertTrue(chainedHashTable.isEmpty());
         chainedHashTable.insert(123456789, "Keven Cole");
         chainedHashTable.insert(234567890, "David Cole");
         chainedHashTable.insert(345678901, "Sheila Cole");
         chainedHashTable.insert(456789012, "Edgar Cole");
         assertEquals(chainedHashTable.getSize(), 4);
+        assertEquals(chainedHashTable.lookup(345678901), "Sheila Cole");
         assertEquals(chainedHashTable.getBuckets(), 7);
         chainedHashTable.resizeTable();
-        assertEquals(chainedHashTable.getBuckets(), 14);
+        assertEquals(chainedHashTable.getBuckets(), 21);
+        assertEquals(chainedHashTable.getSize(), 4);
+        assertEquals(chainedHashTable.lookup(345678901), "Sheila Cole");
+        assertEquals(chainedHashTable.lookup(123456789), "Keven Cole");
     }
 }
