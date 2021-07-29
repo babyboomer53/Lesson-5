@@ -261,6 +261,10 @@ public class Homework5 {
             this.resizeMultiplier = resizeMultiplier;
         }
 
+        public int getBuckets() {
+            return table.length;
+        }
+
         public int getSize() {
             return size;
         }
@@ -388,6 +392,21 @@ public class Homework5 {
                     return key;
                 } else {
                     throw new NoSuchElementException();
+                }
+            }
+        }
+
+        public void resizeTable() {
+            SinglyLinkedList<KeyValuePair<K, V>>[] newTable = new SinglyLinkedList[table.length * resizeMultiplier];
+            SinglyLinkedList<KeyValuePair<K, V>>[] originalTable = table;
+            for (int index = 0; index < newTable.length; index++) {
+                newTable[index] = new SinglyLinkedList<KeyValuePair<K, V>>();
+            }
+            table = newTable;
+            for (int index = 0; index < originalTable.length; index++) {
+                SinglyLinkedList<KeyValuePair<K, V>>.Element element = originalTable[0].head;
+                while (element != null) {
+                    insert(element.getData().getKey(),element.getData().getValue());
                 }
             }
         }

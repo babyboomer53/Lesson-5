@@ -51,10 +51,24 @@ public class Homework5Test {
     }
 
     @Test
-    public void andHereIsTheModifiedConstructorForTheChainedHashTable(){
-        ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(11,1.5,2);
+    public void theModifiedConstructorForTheChainedHashTable() {
+        ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(11, 1.5, 2);
         assertTrue(chainedHashTable.isEmpty());
-        chainedHashTable.insert(548962115,"Edgar Cole");
+        chainedHashTable.insert(548962115, "Edgar Cole");
         assertFalse(chainedHashTable.isEmpty());
+    }
+
+    @Test
+    public void theResizeMethod() {
+        ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(7, 1.5, 2);
+        assertTrue(chainedHashTable.isEmpty());
+        chainedHashTable.insert(123456789, "Keven Cole");
+        chainedHashTable.insert(234567890, "David Cole");
+        chainedHashTable.insert(345678901, "Sheila Cole");
+        chainedHashTable.insert(456789012, "Edgar Cole");
+        assertEquals(chainedHashTable.getSize(), 4);
+        assertEquals(chainedHashTable.getBuckets(), 7);
+        chainedHashTable.resizeTable();
+        assertEquals(chainedHashTable.getBuckets(), 14);
     }
 }
