@@ -359,7 +359,9 @@ public class Homework5 {
 
         private SinglyLinkedList<KeyValuePair<K, V>> getBucket(K key) {
             // Division method
-            return table[Math.abs(key.hashCode()) % table.length];
+            // return table[Math.abs(key.hashCode()) % table.length];
+            // Multiplication method
+            return table[(int) (table.length * (0.61 * (int) key % 1))];
         }
 
         private class KeysIterator implements Iterator<K> {
@@ -412,7 +414,9 @@ public class Homework5 {
                 while (element != null) {
                     K key = element.getData().getKey();
                     V value = element.getData().getValue();
-                    table[Math.abs(key.hashCode()) % table.length].insertHead(new KeyValuePair<>(key, value));
+                    //table[Math.abs(key.hashCode()) % table.length].insertHead(new KeyValuePair<>(key, value));
+                    table[(int) (table.length * (0.61 * (int) key % 1))].insertHead(new KeyValuePair<>(key,
+                            value));
                     element = element.getNext();
                 }
             }
