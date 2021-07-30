@@ -1,5 +1,7 @@
 package cse41321.containers;
 
+import org.testng.annotations.Test;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -422,6 +424,16 @@ public class Homework5 {
             }
         }
 
+        @Override
+        public String toString() {
+            return String.format("Buckets %d; Elements %d; Load factor %.1f; Maximum load factor %.1f; Multiplier %d",
+                    table.length,
+                    getSize(),
+                    (double) getSize() / table.length,
+                    maxLoadFactor,
+                    resizeMultiplier);
+        }
+
         public Iterable<K> keys() {
             return new Iterable<K>() {
                 public Iterator<K> iterator() {
@@ -451,5 +463,25 @@ public class Homework5 {
         }
     }
 
+    public static class Driver {
+        public static void main(String[] args) {
+            ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(3, 1.5, 4);
+            System.out.println(chainedHashTable);
+            System.out.println("Adding Kevin Cole, David Cole and Kamilah Cole…");
+            chainedHashTable.insert(123456789, "Kevin Cole");
+            chainedHashTable.insert(234567890, "David Cole");
+            chainedHashTable.insert(345678901, "Kamilah Cole");
+            System.out.println(chainedHashTable);
+            System.out.println("Adding Cainan Cole, Adrienne Davis and Jahna Houston…");
+            chainedHashTable.insert(567890123, "Cainan Cole");
+            chainedHashTable.insert(678901234, "Adrienne Davis");
+            chainedHashTable.insert(789012345, "Jahna Houston");
+            System.out.println(chainedHashTable);
+            System.out.println("Removing David Cole and Adrienne Davis…");
+            chainedHashTable.remove(234567890);
+            chainedHashTable.remove(678901234);
+            System.out.println(chainedHashTable);
+        }
+    }
 
 }
