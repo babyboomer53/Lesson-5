@@ -284,7 +284,7 @@ public class Homework5 {
             }
 
             // Has the load factor exceeded the threshold?
-            if ((double) size / table.length >= 1.5) resizeTable();
+            if (((double) getSize() / table.length) > maxLoadFactor) resizeTable();
 
             getBucket(key).insertHead(new KeyValuePair<K, V>(key, value));
             ++size;

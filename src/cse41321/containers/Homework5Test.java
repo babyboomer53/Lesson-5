@@ -60,19 +60,39 @@ public class Homework5Test {
 
     @Test
     public void theResizeMethod() {
-        ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(7, 1.5, 3);
+        ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(7, 1.5, 4);
         assertTrue(chainedHashTable.isEmpty());
-        chainedHashTable.insert(123456789, "Keven Cole");
+        chainedHashTable.insert(123456789, "Kevin Cole");
         chainedHashTable.insert(234567890, "David Cole");
-        chainedHashTable.insert(345678901, "Sheila Cole");
+        chainedHashTable.insert(345678901, "Kamilah Cole");
         chainedHashTable.insert(456789012, "Edgar Cole");
         assertEquals(chainedHashTable.getSize(), 4);
-        assertEquals(chainedHashTable.lookup(345678901), "Sheila Cole");
+        assertEquals(chainedHashTable.lookup(345678901), "Kamilah Cole");
         assertEquals(chainedHashTable.getBuckets(), 7);
         chainedHashTable.resizeTable();
-        assertEquals(chainedHashTable.getBuckets(), 21);
+        assertEquals(chainedHashTable.getBuckets(), 28);
         assertEquals(chainedHashTable.getSize(), 4);
-        assertEquals(chainedHashTable.lookup(345678901), "Sheila Cole");
-        assertEquals(chainedHashTable.lookup(123456789), "Keven Cole");
+        assertEquals(chainedHashTable.lookup(345678901), "Kamilah Cole");
+        assertEquals(chainedHashTable.lookup(123456789), "Kevin Cole");
+    }
+
+    @Test
+    public void autoResizing() {
+        ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(3, 1.5, 4);
+        assertTrue(chainedHashTable.isEmpty());
+        chainedHashTable.insert(123456789, "Kevin Cole");
+        chainedHashTable.insert(234567890, "David Cole");
+        chainedHashTable.insert(345678901, "Kamilah Cole");
+        assertEquals(chainedHashTable.lookup(345678901), "Kamilah Cole");
+        assertEquals(chainedHashTable.getBuckets(), 3);
+        chainedHashTable.insert(567890123, "Cainan Cole");
+        assertEquals(chainedHashTable.getSize(), 4);
+        assertEquals(chainedHashTable.getBuckets(), 3);
+        chainedHashTable.insert(678901234, "Adrienne Davis");
+        assertEquals(chainedHashTable.getBuckets(), 3);
+        chainedHashTable.insert(789012345, "Jahna Houston");
+        assertEquals(chainedHashTable.getBuckets(), 12);
+        assertEquals(chainedHashTable.lookup(678901234), "Adrienne Davis");
+        assertEquals(chainedHashTable.getSize(), 6);
     }
 }
