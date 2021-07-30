@@ -1,5 +1,5 @@
 # Data Structures and Algorithms in Java (CSE-41321)
-## Summer 2021 (157162)
+## UCSD Extension - Summer 2021 (157162)
 ### Assignment #5
 ### Java Implementation of a Hash Table with Separate Chaining
 #### Background
@@ -648,7 +648,7 @@ Process finished with exit code 0
 #### Summary
 Wow, this was a doozy! I had more trouble with the resize method than I had anticipated. In fact, I had expected it to
 be relatively easy. Instead, I was up until 6:00 in the morning getting it to work! Eventually I discovered that I had
-been creating a new array without initializing its elements with **SinglyLinkedlist objects**. That would explain the 
+been creating a new array without initializing its elements with **SinglyLinkedlist** objects. That would explain the 
 null pointer exceptions I kept getting. The sad part of it is that there was an example of what I needed to do elsewhere
 in the code! 🙁
 
@@ -658,7 +658,7 @@ multiplication rather than division. There were some type-casting issues I had t
 I still think that generics are biting me in the butt. I need to get a better understanding of that. Sometimes I get
 lucky and guess right.
 
-Each time I do one of these, I'm making better use of the TestNG framework. I can't say the same about the IDEA
+Each time I do one of these I'm making better use of the TestNG framework. I can't say the same about the IDEA
 debugger. I'm still learning how to use it. In terms of helping me find a bug, it succeeds only about forty percent of
 the time. I suspect I'll get better at using it.
 
@@ -667,4 +667,5 @@ rewarded, and eventually I solved the riddle. My hope is that I will retain the 
 project will benefit from the preceding.
 
 Okay, my computer is going to shut down in about fifteen minutes. Unfortunately, I don't know how to cancel the shutdown
-process on a Windows system. I've got to scramble to get this submitted.
+process on a Windows system.[^1] I've got to scramble to get this submitted.
+[^1]:This situation has since been rectified.
