@@ -557,31 +557,31 @@ public class Homework5Test {
 
     @Test
     public void testTheKeyValuePairConstructor() {
-        KeyValuePair<Integer, String> keyValuePair = new KeyValuePair<>(548962115, "Edgar Cole");
+        KeyValuePair<Integer, String> keyValuePair = new KeyValuePair<>(456789012, "Edgar Cole");
         // I'm not sure why I expected that in the next statement some sort of auto-unboxing would occur.
-        assertEquals((int) keyValuePair.getKey(), 548962115);
+        assertEquals((int) keyValuePair.getKey(), 456789012);
         assertEquals(keyValuePair.getValue(), "Edgar Cole");
     }
 
     @Test
     public void testTheSinglyLinkedListConstructor() {
-        KeyValuePair<Integer, String> keyValuePair = new KeyValuePair<>(548962115, "Edgar Cole");
+        KeyValuePair<Integer, String> keyValuePair = new KeyValuePair<>(456789012, "Edgar Cole");
         SinglyLinkedList<KeyValuePair<Integer, String>> singlyLinkedList = new SinglyLinkedList<>();
         singlyLinkedList.insertHead(keyValuePair);
         assertEquals(singlyLinkedList.getHead().getData().getValue(), "Edgar Cole");
         // Here we go again with the explicit cast. I guess I still have a bit to learn about how generics work.
-        assertEquals((int) singlyLinkedList.getHead().getData().getKey(), 548962115);
+        assertEquals((int) singlyLinkedList.getHead().getData().getKey(), 456789012);
     }
 
     @Test
     public void theChainedHashTableConstructorTestBeforeModification() {
         ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(11);
-        chainedHashTable.insert(548962115, "Edgar Cole");
-        assertTrue(chainedHashTable.contains(548962115));
+        chainedHashTable.insert(456789012, "Edgar Cole");
+        assertTrue(chainedHashTable.contains(456789012));
         chainedHashTable.insert(123456789, "Adrienne Davis");
         assertEquals(chainedHashTable.lookup(123456789), "Adrienne Davis");
         assertEquals(chainedHashTable.getSize(), 2);
-        chainedHashTable.remove(548962115);
+        chainedHashTable.remove(456789012);
         assertEquals(chainedHashTable.getSize(), 1);
         assertEquals(chainedHashTable.lookup(123456789), "Adrienne Davis");
     }
@@ -590,7 +590,7 @@ public class Homework5Test {
     public void theModifiedConstructorForTheChainedHashTable() {
         ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(11, 1.5, 2);
         assertTrue(chainedHashTable.isEmpty());
-        chainedHashTable.insert(548962115, "Edgar Cole");
+        chainedHashTable.insert(456789012, "Edgar Cole");
         assertFalse(chainedHashTable.isEmpty());
     }
 
