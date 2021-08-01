@@ -417,8 +417,7 @@ public class Homework5 {
                     K key = element.getData().getKey();
                     V value = element.getData().getValue();
                     //table[Math.abs(key.hashCode()) % table.length].insertHead(new KeyValuePair<>(key, value));
-                    table[(int) (table.length * (0.61 * (int) key % 1))].insertHead(new KeyValuePair<>(key,
-                            value));
+                    table[(int) (table.length * (0.61 * (int) key % 1))].insertHead(new KeyValuePair<>(key, value));
                     element = element.getNext();
                 }
             }
@@ -465,7 +464,7 @@ public class Homework5 {
 
     public static class Driver {
         public static void main(String[] args) {
-            ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(3, 1.5, 4);
+            ChainedHashTable<Integer, String> chainedHashTable = new ChainedHashTable<>(3, 1.5, 2);
             System.out.println(chainedHashTable);
             System.out.println("Adding Kevin Cole, David Cole and Kamilah Cole…");
             chainedHashTable.insert(123456789, "Kevin Cole");

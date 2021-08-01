@@ -1,0 +1,22 @@
+
+D
+java:S3740;"/Provide the parametrized type for this generic.(ó®Ù
+U
+java:S1118":Add a private constructor to hide the implicit public one.(ÓöÐéúÿÿÿÿ
+l
+java:S1206Ï"PThis class overrides "equals()" and should therefore also override "hashCode()".(Ý¢êÍýÿÿÿÿ
+u
+java:S2293ÿ"YReplace the type specification in this constructor call with the diamond operator ("<>").(á˜§æûÿÿÿÿ
+u
+java:S2293£"YReplace the type specification in this constructor call with the diamond operator ("<>").(œÉüåøÿÿÿÿ
+\
+java:S2147ã"ECombine this catch with the one at line 353, which has the same body.(úˆì…
+W	java:S125ì"<This block of commented-out lines of code should be removed.(¢ãÊ°ýÿÿÿÿ
+W	java:S125£"<This block of commented-out lines of code should be removed.(§“„þÿÿÿÿ
+S
+java:S1128"8Remove this unused import 'org.testng.annotations.Test'.(á½úáùÿÿÿÿ
+q
+java:S1192š"UDefine a constant instead of duplicating this literal "key must not be null" 3 times.(ÅÞ­™úÿÿÿÿ
+D
+java:S1604µ"(Make this anonymous inner class a lambda(‡ÿ™ãùÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ôÂ©Œ

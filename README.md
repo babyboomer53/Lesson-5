@@ -24,8 +24,8 @@ In addition, there is a test class, *Homework5Test*, containing the unit tests. 
 framework, a framework that seems to work more seamlessly than the other one I've used.
 
 The *SinglyLinkedList*, *ChainedHashTable* and *DuplicateKeyException* (and their corresponding inner classes) 
-comprise this implementation of a hash table with separate chaining. The *Driver* class is where the main method resides
-and contains a number of statements which demonstrate various functions of the *ChainedHashTable* class.
+comprise this implementation of a hash table with separate chaining. The *Driver* class is where the main method resides.
+It executes a number of statements which demonstrate various functions of the *ChainedHashTable* class.
 
 ##### The Code
 ###### Homework5
@@ -650,7 +650,7 @@ Wow, this was a doozy! I had more trouble with the resize method than I had anti
 be relatively easy. Instead, I was up until 6:00 in the morning getting it to work! Eventually I discovered that I had
 been creating a new array without initializing its elements with **SinglyLinkedlist** objects. That would explain the 
 null pointer exceptions I kept getting. The sad part of it is that there was an example of what I needed to do elsewhere
-in the code! 🙁
+in the code!
 
 The next most challenging aspect of the assignment was deriving a formula for a hash function that would be based on
 multiplication rather than division. There were some type-casting issues I had to master before it worked.
