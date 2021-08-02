@@ -23,7 +23,7 @@ java*. The classes it contains are as follows:
 In addition, there is a test class, *Homework5Test*, containing the unit tests. This class is based on the TestNG
 framework, a framework that seems to work more seamlessly than the other one I've used.
 
-The *SinglyLinkedList*, *ChainedHashTable* and *DuplicateKeyException* (and their corresponding inner classes) 
+The *SinglyLinkedList*, *ChainedHashTable* and *DuplicateKeyException* (and their corresponding nested classes) 
 comprise this implementation of a hash table with separate chaining. The *Driver* class is where the main method resides.
 It executes a number of statements which demonstrate various functions of the *ChainedHashTable* class.
 
@@ -83,7 +83,8 @@ public class Homework5 {
             public E getData() {
                 return data;
             }
-
+```
+```java
             public Element getNext() {
                 return next;
             }
@@ -668,4 +669,4 @@ project will benefit from the preceding.
 
 Okay, my computer is going to shut down in about fifteen minutes. Unfortunately, I don't know how to cancel the shutdown
 process on a Windows system.[^1] I've got to scramble to get this submitted.
-[^1]:This situation has since been rectified.
+[^1]:This situation has since been rectified. I discovered that "*shutdown -a*" will abort a shutdown that's in progress.
